@@ -12,12 +12,21 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <div id="intro">
-        <h1 id="title">Essig Museum Collection</h1>
-        <p id="description">Here is a map of the insect specimen collection of the Essig Museum. Due to the huge size of the collection, only specimens collected in the past 20 years are shown. The colors
-           of the circle markers correspond to the orders of the insects. The ten orders that most frequently occur in the specimens are shown in the legend.</p>
+        <h1 id="title" style="color:white">Mapping Sea Level Rise Inundation in Tuvalu</h1>
+        <p id="description"></p>
       </div>
-      <button id="previousButton" hidden="true">&laquo; Previous</button>
-      <button id="nextButton">Next &raquo;</button>
+      <label for="islands" style="color:white">Select an island to view potential inundation</label>
+      <select id="islands">
+        <option value="Funafuti">Funafuti</option>
+        <option value="Nanumea">Nanumea</option>
+        <option value="Niutao">Niutao</option>
+        <option value="Nanumaga">Nanumaga</option>
+        <option value="Nui">Nui</option>
+        <option value="Vaitupu">Vaitupu</option>
+        <option value="Nukufetau">Nukufetau</option>
+        <option value="Nukulaelae">Nukulaelae</option>
+        <option value="Niulakita">Niulakita</option>
+      </select>
     </div>
     <!-- Map -->
     <div id='map' class='map'></div>

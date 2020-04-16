@@ -11,11 +11,58 @@ var map = new mapboxgl.Map({
 });
 
 var data;
+var islandLoc = {
+  'Nanumea':{
+    'cor': [176.124937, -5.674855],
+    'zoom': 13
+  },
+  'Niutao':{
+    'cor': [177.342939, -6.108872],
+    'zoom': 14
+  },
+  'Nanumaga':{
+    'cor': [176.319494, -6.285822],
+    'zoom': 13
+  },
+  'Nui':{
+    'cor': [177.162076, -7.220970],
+    'zoom': 13
+  },
+  'Vaitupu':{
+    'cor': [178.678998, -7.477828],
+    'zoom': 13
+  },
+  'Nukufetau':{
+    'cor': [178.367552, -7.994038],
+    'zoom': 11.5
+  },
+  'Funafuti':{
+    'cor': [179.114308, -8.516122],
+    'zoom': 11
+  },
+  'Nukulaelae':{
+    'cor': [179.832588, -9.383703],
+    'zoom': 12
+  },
+  'Niulakita':{
+    'cor': [179.473064, -10.789087],
+    'zoom': 15
+  }
+};
+
 $(document).ready(function() {
   $.ajax('https://raw.githubusercontent.com/adawyj97/Capstone-Project/master/Data/Tuvalu_grid.json').done(function(dataset) {
       data = JSON.parse(dataset);
+      document.getElementById("islands").onchange = function() {
+        var selected = $("#islands option:selected").text();
+        map.flyTo({
+          center: islandLoc[selected].cor,
+          zoom: islandLoc[selected].zoom,
+          essential: true
         });
-      });
+      };
+  });
+});
 
 map.on('load', function() {
   map.addSource('elevation', {
